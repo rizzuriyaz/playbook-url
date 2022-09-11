@@ -1,0 +1,26 @@
+1.yum module module
+  https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yum_module.html
+
+2.service module ansible
+  https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html
+
+3.template module ansible {port no}
+  https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html
+
+4.ubuntu {ansible apt module}
+
+5.ansible handlers
+  https://docs.ansible.com/ansible/latest/user_guide/playbooks_handlers.html
+
+6.ansible register
+  https://stackoverflow.com/questions/29635627/register-variables-in-loop-in-an-ansible-playbook
+
+7.git_url module
+  https://docs.ansible.com/ansible/latest/collections/ansible/builtin/get_url_module.html
+
+8.copy module:
+  https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+
+9.lineinfile:
+  https://docs.ansible.com/ansible/latest/collections/ansible/builtin/lineinfile_module.html
+

@@ -1,0 +1,6 @@
+1.visudo 
+
+2.become: yes
+  https://docs.ansible.com/ansible/latest/user_guide/become.html
+
+3.
