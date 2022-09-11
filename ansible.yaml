@@ -1,0 +1,46 @@
+---
+- hosts: web
+  gather_facts: true
+  tasks:
+    - name: install apache
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+      register: riyaz
+    - debug: var=riyaz
+      when: ansible_os_family ==  "Redhat"
+      
+    - name: start
+      ansible.builtin.service:
+        name: httpd
+        state: started
+      when: ansible_os_family ==  "Redhat"
+    - name: port no change
+      ansible.builtin.template:
+        src: /root/playbook/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify:
+      - restart apache
+      when: ansible_os_family ==  "Redhat"
+  handlers:
+    - name: restart apache
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      when: ansible_os_family ==  "Redhat"
+    - name: apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: $ANSIBLE_VAULT;1.1;AES256
+          62636334643832643234616533333838323263623131353963396234363164386231383034633665
+          3136336263643132653634643463633236663934336534330a363738383633643431386437343936
+          36323934633931376235343737393730613361323237636165663731363937363032366536356430
+          3338323761326563390a323035336235373033666239643062663738386339343265303133316663
+          3735
+Encryption successful
+
+        #when: ansible_os_family == "Debian"
+
+
+
+
